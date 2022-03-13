@@ -49,6 +49,7 @@ class Todo {
     const taskHtml = document.createElement('div');
 
     row.classList.add('item');
+    row.id = `item${task.index}`;
     checkbox.name = 'completed';
     checkbox.type = 'checkbox';
     checkbox.classList.add('completed_check');
