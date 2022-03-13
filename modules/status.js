@@ -7,12 +7,12 @@ class status {
   static updateItem(e) {
     const checkbox = e.target;
     if (checkbox.checked) {
-      return istrue;
+      return istrue();
     }
     return false;
   }
 
-  static istrue(){
+  static istrue() {
     return true;
   }
 }
