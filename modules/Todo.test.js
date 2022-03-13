@@ -76,4 +76,15 @@ describe("Todo list test, change and clear completed tasks", () => {
     expect(task.completed).toBe(true);
 
   })
+
+  it('Remove completed from list', () => {
+    update.tasks[1].completed = true
+    update.tasks[2].completed = true
+
+    update.removefromUI;
+    const data = JSON.parse(localStorage.getItem('tasks'));
+    const temp = data.map((value) => new Task(value.completed, value.task, value.index));
+    expect(temp.length).toBe(update.tasks.length);
+    expect(update.tasks.length).toBe(3);
+  })
 });
