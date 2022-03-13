@@ -6,14 +6,12 @@ import Task from './tasks.js';
 
 describe('TodoList Test', () => {
 
-
   document.body.innerHTML = '<section class="main">'
   + '  <div id="list_container">'
   + '  <ul id="list">'
   + '  </ul>'
   + '   </div>'
   + '</section>';
-
 
   // update.loadDataFromStorage();
 
@@ -44,5 +42,4 @@ describe('TodoList Test', () => {
     const tempData = data.map((value) => new Task(value.completed, value.task, value.index));
     expect(tempData.length).toBe(update.tasks.length);
 });
-
 })
