@@ -42,7 +42,7 @@ describe('TodoList Test add and remove', () => {
 });
 describe('Todo list test, change and clear completed tasks', () => {
   it('Change second task', () => {
-    const newTask = "spin";
+    const newTask = 'spin';
     const oldTask = update.tasks[1].task;
     update.tasks.forEach((task) => {
       update.saveChanges(task, oldTask, newTask);
@@ -50,7 +50,7 @@ describe('Todo list test, change and clear completed tasks', () => {
     expect(update.tasks[1].task).toBe('spin');
   });
   it('Change third task', () => {
-    const newTask = "laundry";
+    const newTask = 'laundry';
     const oldTask = update.tasks[2].task;
     update.tasks.forEach((task) => {
       update.saveChanges(task, oldTask, newTask);
@@ -63,12 +63,12 @@ describe('Todo list test, change and clear completed tasks', () => {
     expect(task.completed).toBe(true);
   });
   it('Remove completed from list', () => {
-    update.tasks[1].completed = true
-    update.tasks[2].completed = true
-    update.removefromUI;
+    update.tasks[1].completed = true;
+    update.tasks[2].completed = true;
+    update.removefromUI();
     const data = JSON.parse(localStorage.getItem('tasks'));
     const temp = data.map((value) => new Task(value.completed, value.task, value.index));
     expect(temp.length).toBe(update.tasks.length);
-    expect(update.tasks.length).toBe(3);
+    expect(update.tasks.length).toBe(0);
   });
 });
