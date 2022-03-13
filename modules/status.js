@@ -7,9 +7,13 @@ class status {
   static updateItem(e) {
     const checkbox = e.target;
     if (checkbox.checked) {
-      return true;
+      return istrue;
     }
     return false;
+  }
+
+  static istrue(){
+    return true;
   }
 }
 export default status;
